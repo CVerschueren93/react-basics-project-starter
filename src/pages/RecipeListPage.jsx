@@ -1,13 +1,16 @@
+import { Button } from "@chakra-ui/react/dist";
 import { Center, Heading } from "@chakra-ui/react";
 import { data } from "../utils/data";
+import { RecipeCard } from "../components/ui/RecipeCard";
 
-export const RecipeListPage = () => {
-  // You can play around with the console log, but ultimately remove it once you are done
-  console.log(data.hits[0].recipe.label);
-
+export const RecipeListPage = ({ clickFn }) => {
   return (
-    <Center h="100vh" flexDir="column">
-      <Heading>Recipe Checker</Heading>
+    <Center gap={2} h="100vh" bgColor="blue.200">
+      {data.map((item) => (
+        <RecipeCard clickFn={clickFn} item={item} key={item.id} />
+      ))}
     </Center>
   );
 };
+
+<Heading>Recipe Checker</Heading>;
