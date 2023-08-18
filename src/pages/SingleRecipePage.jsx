@@ -32,7 +32,17 @@ export const SingleRecipePage = ({ item, clickFn }) => {
           />
           <Stack mt="6" spacing="3">
             <Heading size="md">{item.hits.recipe.label}</Heading>
-            <Text color="blue.600">{item.description}</Text>
+            <Text color="blue.600">{item.hits.recipe.mealType}
+            {item.hits.recipe.dishType}
+            {item.hits.recipe.totalTime}
+            {item.hits.recipe.dietLabels}
+            {item.hits.recipe.healthLabels}
+            {item.hits.recipe.cautions}
+            {item.hits.recipe.ingredientLines}
+            {item.hits.recipe.totalNutrients->kcal proteine fat carbs cholesterol sodium}
+            servings?
+            </Text>
+            
 
             <Button color="blue.600" w="fit-content" onClick={() => clickFn()}>
               Back to overview
