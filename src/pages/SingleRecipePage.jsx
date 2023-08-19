@@ -39,8 +39,8 @@ export const SingleRecipePage = ({ item, clickFn }) => {
             {item.hits.recipe.healthLabels}
             {item.hits.recipe.cautions}
             {item.hits.recipe.ingredientLines}
+            {item.hits.recipe.dishType}
             {item.hits.recipe.totalNutrients->kcal proteine fat carbs cholesterol sodium}
-            servings?
             </Text>
             
 
