@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react/dist";
+import { Button } from "@chakra-ui/react";
 import { Center, Heading } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/ui/RecipeCard";
