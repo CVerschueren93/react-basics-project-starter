@@ -17,7 +17,7 @@ export const RecipeCard = ({ chosenRecipe, clickFn }) => {
         return <li key={labels}>{labels}</li>;
       });
 
-      return <ul className="dietLabels">{labelList}</ul>;
+      return <ul>{labelList}</ul>;
     }
   };
 
@@ -30,7 +30,7 @@ export const RecipeCard = ({ chosenRecipe, clickFn }) => {
       return (
         <>
           <p>Cautions:</p>
-          <ul className="cautionList">{cautionList}</ul>
+          <ul>{cautionList}</ul>
         </>
       );
     }
