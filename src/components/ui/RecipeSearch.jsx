@@ -18,7 +18,7 @@ export const RecipeSearch = ({ clickFn }) => {
     <>
       <label>Search for recipes:</label>
       <TextInput changeFn={handleChange} w={200} mb={8} />
-      <RecipeListPage clickFn={clickFn} drinks={matchedRecipes} />
+      <RecipeListPage clickFn={clickFn} recipes={matchedRecipes} />
     </>
   );
 };
