@@ -60,7 +60,7 @@ export const RecipeCard = ({ chosenRecipe, clickFn }) => {
           <Heading size="md">{chosenRecipe.label}</Heading>
           <Text color="blue.600">
             {dietLabels},{cautions},{chosenRecipe.mealType},
-            {chosenRecipe.dishType},
+            {chosenRecipe.dishType}, {veganVegetarian},
           </Text>
         </Stack>
       </CardBody>
