@@ -16,7 +16,7 @@ export const RecipeSearch = ({ clickFn }) => {
 
   return (
     <>
-      <label>Search for drinks:</label>
+      <label>Search for recipes:</label>
       <TextInput changeFn={handleChange} w={200} mb={8} />
       <RecipeListPage clickFn={clickFn} drinks={matchedRecipes} />
     </>
