@@ -1,6 +1,40 @@
 import { Card, Image, CardBody, Stack, Heading, Text } from "@chakra-ui/react";
 
-export const RecipeCard = ({ item, clickFn }) => {
+export const RecipeCard = ({ chosenRecipe, clickFn }) => {
+  const info = chosenRecipe.recipe;
+
+  const veganVegetarian = () => {
+    if (info.healthLabels.includes("Vegan")) {
+      return "Vegan";
+    } else if (info.healthLabels.includes("Vegetarian")) {
+      return "Vegetarian";
+    }
+  };
+
+  const dietLabels = () => {
+    if (info.dietLabels.length !== 0) {
+      let labelList = info.dietLabels.map((labels) => {
+        return <li key={labels}>{labels}</li>;
+      });
+
+      return <ul className="dietLabels">{labelList}</ul>;
+    }
+  };
+
+  const cautions = () => {
+    if (info.cautions.length !== 0) {
+      let cautionList = info.cautions.map((cautions) => {
+        return <li key={cautions}>{cautions}</li>;
+      });
+
+      return (
+        <>
+          <p>Cautions:</p>
+          <ul className="cautionList">{cautionList}</ul>
+        </>
+      );
+    }
+  };
   return (
     <Card
       borderRadius="xl"
@@ -8,7 +42,7 @@ export const RecipeCard = ({ item, clickFn }) => {
       borderWidth={3}
       w="sm"
       h="30rem"
-      onClick={() => clickFn(item)}
+      onClick={() => clickFn(chosenRecipe)}
       cursor="pointer"
       _hover={{ transform: "scale(1.01)" }}
     >
@@ -16,18 +50,17 @@ export const RecipeCard = ({ item, clickFn }) => {
         <Image
           h={64}
           w="sm"
-          src={item.hits.recipe.image}
+          src={chosenRecipe.image}
           borderRadius="md"
           borderStyle={"solid"}
           borderWidth={2}
           borderColor={"black"}
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">{item.hits.recipe.label}</Heading>
+          <Heading size="md">{chosenRecipe.label}</Heading>
           <Text color="blue.600">
-            {item.hits.recipe.dietLabels},{item.hits.recipe.cautions},
-            {item.hits.recipe.mealType},{item.hits.recipe.dishType},
-            {item.recipe.healthLabels}
+            {dietLabels},{cautions},{chosenRecipe.mealType},
+            {chosenRecipe.dishType},
           </Text>
         </Stack>
       </CardBody>
