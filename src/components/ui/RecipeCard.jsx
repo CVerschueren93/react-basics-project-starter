@@ -54,7 +54,7 @@ export const RecipeCard = ({ item, clickFn }) => {
         borderWidth={3}
         w="sm"
         h="30rem"
-        onClick={() => clickFn(item)}
+        onClick={() => clickFn(info)}
         cursor="pointer"
         _hover={{ transform: "scale(1.01)" }}
       >
@@ -62,19 +62,20 @@ export const RecipeCard = ({ item, clickFn }) => {
           <Image
             h={64}
             w="sm"
-            src={item.image}
+            src={item.recipe.image}
             borderRadius="md"
             borderStyle={"solid"}
             borderWidth={2}
             borderColor={"black"}
           />
           <Stack mt="6" spacing="3">
-            <Heading size="md">{item.label}</Heading>
+            <Heading size="md">{item.recipe.label}</Heading>
             <Text color="blue.600">
               <Flex>
                 <Tag>{dietLabels()},</Tag>
               </Flex>
-              {cautions()},{item.mealType},{item.dishType}, {veganVegetarian()},
+              {cautions()},{item.recipe.mealType},{item.recipe.dishType},
+              {veganVegetarian()},
             </Text>
           </Stack>
         </CardBody>

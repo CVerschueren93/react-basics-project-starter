@@ -10,12 +10,12 @@ import {
 } from "@chakra-ui/react";
 
 export const SingleRecipePage = ({ item, clickFn }) => {
-  const calories = Math.trunc(item.totalNutrients.ENERC_KCAL.quantity);
-  const carbs = Math.trunc(item.totalNutrients.CHOCDF.quantity);
-  const protein = Math.trunc(item.totalNutrients.PROCNT.quantity);
-  const fat = Math.trunc(item.totalNutrients.FAT.quantity);
-  const cholesterol = Math.trunc(item.totalNutrients.CHOLE.quantity);
-  const sodium = Math.trunc(item.totalNutrients.NA.quantity);
+  const calories = Math.trunc(item.recipe.totalNutrients.ENERC_KCAL.quantity);
+  const carbs = Math.trunc(item.recipe.totalNutrients.CHOCDF.quantity);
+  const protein = Math.trunc(item.recipe.totalNutrients.PROCNT.quantity);
+  const fat = Math.trunc(item.recipe.totalNutrients.FAT.quantity);
+  const cholesterol = Math.trunc(item.recipe.totalNutrients.CHOLE.quantity);
+  const sodium = Math.trunc(item.recipe.totalNutrients.NA.quantity);
 
   return (
     <Center bgColor="blue.200" h="100vh" flexDirection="column">
@@ -30,23 +30,23 @@ export const SingleRecipePage = ({ item, clickFn }) => {
           <Image
             h="md"
             w="100%"
-            src={item.hits.recipe.image}
+            src={item.recipe.image}
             borderRadius="md"
             borderStyle={"solid"}
             borderWidth={2}
             borderColor={"black"}
           />
           <Stack mt="6" spacing="3">
-            <Heading size="md">{item.hits.recipe.label}</Heading>
+            <Heading size="md">{item.recipe.label}</Heading>
             <Text color="blue.600">
-              {item.hits.recipe.mealType}
-              {item.hits.recipe.dishType}
-              {item.hits.recipe.totalTime}
-              {item.hits.recipe.dietLabels}
-              {item.hits.recipe.healthLabels}
-              {item.hits.recipe.cautions}
-              {item.hits.recipe.ingredientLines}
-              {item.hits.recipe.dishType}
+              {item.recipe.mealType}
+              {item.recipe.dishType}
+              {item.recipe.totalTime}
+              {item.recipe.dietLabels}
+              {item.recipe.healthLabels}
+              {item.recipe.cautions}
+              {item.recipe.ingredientLines}
+              {item.recipe.dishType}
               <Text>total nutrients:</Text>
               <li>{calories} CALORIES</li>
               <li>{carbs} g CARBS</li>
