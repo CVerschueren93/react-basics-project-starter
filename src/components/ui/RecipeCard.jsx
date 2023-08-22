@@ -1,7 +1,7 @@
 import { Card, Image, CardBody, Stack, Heading, Text } from "@chakra-ui/react";
 
-export const RecipeCard = ({ chosenRecipe, clickFn }) => {
-  const info = chosenRecipe.recipe;
+export const RecipeCard = ({ item, clickFn }) => {
+  const info = item.recipe;
 
   const veganVegetarian = () => {
     if (info.healthLabels.includes("Vegan")) {
@@ -29,7 +29,7 @@ export const RecipeCard = ({ chosenRecipe, clickFn }) => {
 
       return (
         <>
-          <p>Cautions:</p>
+          Cautions:
           <ul>{cautionList}</ul>
         </>
       );
@@ -42,7 +42,7 @@ export const RecipeCard = ({ chosenRecipe, clickFn }) => {
       borderWidth={3}
       w="sm"
       h="30rem"
-      onClick={() => clickFn(chosenRecipe)}
+      onClick={() => clickFn(item)}
       cursor="pointer"
       _hover={{ transform: "scale(1.01)" }}
     >
@@ -50,17 +50,17 @@ export const RecipeCard = ({ chosenRecipe, clickFn }) => {
         <Image
           h={64}
           w="sm"
-          src={chosenRecipe.image}
+          src={item.image}
           borderRadius="md"
           borderStyle={"solid"}
           borderWidth={2}
           borderColor={"black"}
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">{chosenRecipe.label}</Heading>
+          <Heading size="md">{item.label}</Heading>
           <Text color="blue.600">
-            {dietLabels},{cautions},{chosenRecipe.mealType},
-            {chosenRecipe.dishType}, {veganVegetarian},
+            {dietLabels()},{cautions()},{item.mealType},{item.dishType},{" "}
+            {veganVegetarian()},
           </Text>
         </Stack>
       </CardBody>
