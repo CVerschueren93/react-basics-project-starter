@@ -12,7 +12,7 @@ export const App = () => {
         <SingleRecipePage item={selectedItem} clickFn={setSelectedItem} />
       ) : (
         <>
-          <Heading mb={8} size="2xl" color="green.200">
+          <Heading mb={8} size="2xl" color="blue.600">
             Recipe Checker
           </Heading>
           <RecipeSearch clickFn={setSelectedItem} />
