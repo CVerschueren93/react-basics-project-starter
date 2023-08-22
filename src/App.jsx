@@ -7,7 +7,7 @@ export const App = () => {
   const [selectedItem, setSelectedItem] = useState();
 
   return (
-    <Center h="100vh" flexDir="column">
+    <Center h="100vh" flexDir="column" bgColor={"blue.200"}>
       {selectedItem ? (
         <SingleRecipePage item={selectedItem} clickFn={setSelectedItem} />
       ) : (
