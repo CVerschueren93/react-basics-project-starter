@@ -4,7 +4,7 @@ import { TextInput } from "./TextInput";
 import { RecipeListPage } from "../../pages/RecipeListPage";
 
 export const RecipeSearch = ({ clickFn }) => {
-  const [searchField, setSearchField] = useState(" ");
+  const [searchField, setSearchField] = useState("");
 
   const matchedRecipes = availableRecipes.filter((recipe) => {
     return recipe.label.toLowerCase().includes(searchField.toLowerCase());
