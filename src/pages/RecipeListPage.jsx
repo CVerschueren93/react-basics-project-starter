@@ -1,4 +1,4 @@
-import { Center, Heading } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/ui/RecipeCard";
 
@@ -11,5 +11,3 @@ export const RecipeListPage = ({ clickFn }) => {
     </Center>
   );
 };
-
-<Heading>Recipe Checker</Heading>;
