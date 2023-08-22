@@ -5,8 +5,8 @@ import { RecipeCard } from "../components/ui/RecipeCard";
 export const RecipeListPage = ({ clickFn }) => {
   return (
     <Center gap={2} h="100vh" bgColor="blue.200">
-      {data.map((item) => (
-        <RecipeCard clickFn={clickFn} item={item} key={item.id} />
+      {data.hits.map((item, index) => (
+        <RecipeCard clickFn={clickFn} item={item} key={index} />
       ))}
     </Center>
   );
