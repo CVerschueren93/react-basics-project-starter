@@ -7,6 +7,7 @@ import {
   Heading,
   Text,
   Button,
+  Flex,
 } from "@chakra-ui/react";
 
 export const SingleRecipePage = ({ item, clickFn }) => {
@@ -38,23 +39,26 @@ export const SingleRecipePage = ({ item, clickFn }) => {
           />
           <Stack mt="6" spacing="3">
             <Heading size="md">{item.recipe.label}</Heading>
-            <Text color="blue.600">
-              {item.recipe.mealType}
-              {item.recipe.dishType}
-              {item.recipe.totalTime}
-              {item.recipe.dietLabels}
-              {item.recipe.healthLabels}
-              {item.recipe.cautions}
-              {item.recipe.ingredientLines}
-              {item.recipe.dishType}
-              <Text>total nutrients:</Text>
-              <li>{calories} CALORIES</li>
-              <li>{carbs} g CARBS</li>
-              <li>{protein} g PROTEIN</li>
-              <li>{fat} g FAT</li>
-              <li>{cholesterol} mg CHOLESTEROL</li>
-              <li>{sodium} mg SODIUM</li>
-            </Text>
+
+            <Flex gap={2}>
+              <Text color="blue.600">
+                {item.recipe.mealType}
+                {item.recipe.dishType}
+                {item.recipe.totalTime}
+                {item.recipe.dietLabels}
+                {item.recipe.healthLabels}
+                {item.recipe.cautions}
+                {item.recipe.ingredientLines}
+                {item.recipe.dishType}
+                Total nutrients:
+                <li>{calories} CALORIES</li>
+                <li>{carbs} g CARBS</li>
+                <li>{protein} g PROTEIN</li>
+                <li>{fat} g FAT</li>
+                <li>{cholesterol} mg CHOLESTEROL</li>
+                <li>{sodium} mg SODIUM</li>
+              </Text>
+            </Flex>
 
             <Button color="blue.600" w="fit-content" onClick={() => clickFn()}>
               Back to overview
