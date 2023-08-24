@@ -1,5 +1,6 @@
 .RecipeCard {
   text-align: center;
+  width: 30vw;
   border-width: 2px;
   border-color: hsl(0, 2%, 0%);
   border-radius: 5px 5px 5px 5px;
