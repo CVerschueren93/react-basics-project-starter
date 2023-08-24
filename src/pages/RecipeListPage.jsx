@@ -1,13 +1,14 @@
 import { RecipeSearch } from "../components/ui/RecipeSearch";
 import { useState } from "react";
 import { SingleRecipePage } from "./SingleRecipePage";
+import "./RecipeListPage.css";
 
 export function RecipeListPage() {
   let [recipe, setRecipe] = useState();
 
   return (
     <>
-      <div>
+      <div className="recipeListPage">
         {recipe ? (
           <SingleRecipePage selectedRecipe={recipe} clickFn={setRecipe} />
         ) : (
