@@ -1,3 +1,5 @@
+import "./SingleRecipePage.css";
+
 export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
   const info = selectedRecipe.recipe;
 
@@ -9,7 +11,7 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
     return (
       <>
         <h2>Ingredients</h2>
-        <ul>{ingredientList}</ul>
+        <ul className="Ingredients">{ingredientList}</ul>
       </>
     );
   };
@@ -22,9 +24,9 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
 
       return (
         <>
-          <div>
+          <div className="Diet">
             <p>Diet</p>
-            <ul>{labelList}</ul>
+            <ul className="DietLabels">{labelList}</ul>
           </div>
         </>
       );
@@ -38,9 +40,9 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
 
     return (
       <>
-        <div>
+        <div className="HealtLabels">
           <p>Health labels</p>
-          <ul>{healthLabelList}</ul>
+          <ul className="HealthLabelList">{healthLabelList}</ul>
         </div>
       </>
     );
@@ -54,9 +56,9 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
 
       return (
         <>
-          <div>
+          <div className="Cautions">
             <p>Cautions</p>
-            <ul>{cautionList}</ul>
+            <ul className="CautionList">{cautionList}</ul>
           </div>
         </>
       );
@@ -73,9 +75,9 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
 
     return (
       <>
-        <div>
+        <div className="TotalNutrients">
           <p>Total nutrients</p>
-          <ul>
+          <ul className="NutrientList">
             <li>{calories} calories</li>
             <li>{protein} g protein</li>
             <li>{fat} g fat</li>
@@ -90,23 +92,27 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
 
   return (
     <>
-      <div>
-        <button onClick={() => clickFn()}>Back to overview</button>
-      </div>
-      <h2>{info.label}</h2>
-      <img src={info.image}></img>
-      <div>
-        <p>Meal type: {info.mealType}</p>
-        <p>Dish type: {info.dishType}</p>
-        <p>Total cooking time: {info.totalTime} minutes</p>
-        <p>Servings: {info.yield}</p>
-        {ingredients()}
-      </div>
-      <div>
-        {dietLabels()}
-        {healthLabels()}
-        {cautions()}
-        {totalNutrients()}
+      <div className="SingleRecipePage">
+        <div className="ExitRecipe">
+          <button type="button" onClick={() => clickFn()}>
+            Back to overview
+          </button>
+        </div>
+        <img src={info.image} className="SingleRecipeImage"></img>
+        <div className="SingleRecipeInfoLeft">
+          <p>Meal type: {info.mealType}</p>
+          <h2>{info.label}</h2>
+          <p>Total cooking time: {info.totalTime} minutes</p>
+          <p>Servings: {info.yield}</p>
+          <p>Dish type: {info.dishType}</p>
+          {ingredients()}
+        </div>
+        <div className="SingleRecipeInfoRight">
+          {dietLabels()}
+          {healthLabels()}
+          {cautions()}
+          {totalNutrients()}
+        </div>
       </div>
     </>
   );
