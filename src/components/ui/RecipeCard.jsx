@@ -1,3 +1,5 @@
+import "./RecipeCard.css";
+
 export const RecipeCard = ({ selectedRecipe, onClick }) => {
   const info = selectedRecipe.recipe;
 
@@ -15,7 +17,7 @@ export const RecipeCard = ({ selectedRecipe, onClick }) => {
         return <li key={labels}>{labels}</li>;
       });
 
-      return <ul>{labelList}</ul>;
+      return <ul className="DietLabels">{labelList}</ul>;
     }
   };
 
@@ -28,22 +30,26 @@ export const RecipeCard = ({ selectedRecipe, onClick }) => {
       return (
         <>
           <p>Cautions:</p>
-          <ul>{cautionList}</ul>
+          <ul className="Cautions">{cautionList}</ul>
         </>
       );
     }
   };
   return (
     <>
-      <button onClick={() => onClick(selectedRecipe)}>
-        <div>
-          <h2>{info.label}</h2>
-          <img src={info.image}></img>
-          <p>Meal type: {info.mealType}</p>
-          <p>Dish type: {info.dishType}</p>
-          {dietLabels()}
-          {cautions()}
-          {veganOrVegetarian()}
+      <button className="RecipeCard" onClick={() => onClick(selectedRecipe)}>
+        <img src={info.image} className="Image"></img>
+        <div className="RecipeInfo">
+          <div className="Meal">
+            <p className="MealType">{info.mealType}</p>
+            <h2 className="HeaderTwo">{info.label}</h2>
+          </div>
+          <div className="otherInformation">
+            <p className="VeganOrVegetarian">{veganOrVegetarian()}</p>
+            {dietLabels()}
+            <p>Dish Type: {info.dishType}</p>
+            {cautions()}
+          </div>
         </div>
       </button>
     </>
