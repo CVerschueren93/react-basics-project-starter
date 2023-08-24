@@ -8,7 +8,7 @@ export function RecipeListPage() {
 
   return (
     <>
-      <div className="recipeListPage">
+      <div className="RecipeListPage">
         {recipe ? (
           <SingleRecipePage selectedRecipe={recipe} clickFn={setRecipe} />
         ) : (
