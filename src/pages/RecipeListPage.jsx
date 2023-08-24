@@ -1,16 +1,19 @@
-import { Center } from "@chakra-ui/react";
-import { data } from "../utils/data";
+import { RecipeSearch } from "../components/ui/RecipeSearch";
+import { useState } from "react";
+import { SingleRecipePage } from "./SingleRecipePage";
 
-import { RecipeCard } from "../components/ui/RecipeCard";
+export function RecipeListPage() {
+  let [recipe, setRecipe] = useState();
 
-export const RecipeListPage = ({ clickFn }) => {
   return (
     <>
-      <Center gap={2} h="100vh" bgColor="blue.200">
-        {data.hits.map((item, index) => (
-          <RecipeCard clickFn={clickFn} item={item} key={index} />
-        ))}
-      </Center>
+      <div>
+        {recipe ? (
+          <SingleRecipePage selectedRecipe={recipe} clickFn={setRecipe} />
+        ) : (
+          <RecipeSearch clickFn={setRecipe} />
+        )}
+      </div>
     </>
   );
-};
+}
