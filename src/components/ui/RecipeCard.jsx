@@ -44,7 +44,7 @@ export const RecipeCard = ({ selectedRecipe, onClick }) => {
             <p className="MealType">{info.mealType}</p>
             <h2 className="HeaderTwo">{info.label}</h2>
           </div>
-          <div className="otherInformation">
+          <div className="OtherInformation">
             <p className="VeganOrVegetarian">{veganOrVegetarian()}</p>
             {dietLabels()}
             <p>Dish Type: {info.dishType}</p>
