@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { availableRecipes } from "../../utils/availableRecipesArray";
 import { TextInput } from "./TextInput";
-import { RecipeListPage } from "../../pages/RecipeListPage";
+import { RecipeArray } from "../RecipeArray";
+import { data } from "../../utils/data";
 
 export const RecipeSearch = ({ clickFn }) => {
-  const [searchField, setSearchField] = useState("");
+  let [searchField, setSearchField] = useState("");
 
-  const matchedRecipes = availableRecipes.filter((recipe) => {
-    return recipe.label.toLowerCase().includes(searchField.toLowerCase());
-  });
+  let recipeCardArray = (searchResult) => {
+    if (searchResult.length == 0) {
+      return data.hits;
+    } else {
+      let filteredList = data.hits.filter((object) =>
+        object.recipe.label.toLowerCase().includes(searchResult.toLowerCase())
+      );
+      return filteredList;
+    }
+  };
 
   const handleChange = (event) => {
     setSearchField(event.target.value);
@@ -16,9 +23,9 @@ export const RecipeSearch = ({ clickFn }) => {
 
   return (
     <>
-      <label>Search for recipes:</label>
-      <TextInput changeFn={handleChange} w={200} mb={8} />
-      <RecipeListPage clickFn={clickFn} recipes={matchedRecipes} />
+      <label>Recipe Checker</label>
+      <TextInput changeFn={handleChange} />
+      <RecipeArray onClick={clickFn} recipes={recipeCardArray(searchField)} />
     </>
   );
 };
