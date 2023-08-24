@@ -29,7 +29,6 @@ export const RecipeCard = ({ selectedRecipe, onClick }) => {
 
       return (
         <>
-          <p>Cautions:</p>
           <ul className="Cautions">{cautionList}</ul>
         </>
       );
@@ -47,7 +46,7 @@ export const RecipeCard = ({ selectedRecipe, onClick }) => {
           <div className="OtherInformation">
             <p className="VeganOrVegetarian">{veganOrVegetarian()}</p>
             {dietLabels()}
-            <p>Dish Type: {info.dishType}</p>
+            <p className="DishType">{info.dishType}</p>
             {cautions()}
           </div>
         </div>
