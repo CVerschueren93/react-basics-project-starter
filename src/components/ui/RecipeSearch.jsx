@@ -28,7 +28,9 @@ export const RecipeSearch = ({ clickFn }) => {
         <h1>Recipe Checker</h1>
       </div>
       <TextInput changeFn={handleChange} />
-      <RecipeArray onClick={clickFn} recipes={recipeCardArray(searchField)} />
+      <section className="RecipeSection">
+        <RecipeArray onClick={clickFn} recipes={recipeCardArray(searchField)} />
+      </section>
     </>
   );
 };
