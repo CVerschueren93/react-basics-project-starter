@@ -15,9 +15,9 @@
 }
 
 .HeaderTwo {
-  font-size: 1.5vw;
+  font-size: 1.25vw;
   font-weight: bold;
-  padding: 1vw 3vw 1vw 3vw;
+  padding: 1vw 1vw 1vw 1vw;
 }
 
 .RecipeInfo {
@@ -57,7 +57,7 @@
   gap: 3px;
 }
 
-.RecipeInfo .OtherInformation .DietLabels li {
+.RecipeInfo .OtherInformation .DietLabels > li {
   list-style-type: none;
   background-color: hsl(110, 48%, 71%);
   padding: 0px 5px 0px 5px;
@@ -71,7 +71,7 @@
   gap: 3px;
 }
 
-.RecipeInfo .OtherInformation .Cautions li {
+.RecipeInfo .OtherInformation .Cautions > li {
   list-style-type: none;
   font-weight: bold;
   background-color: hsl(0, 82%, 77%);
