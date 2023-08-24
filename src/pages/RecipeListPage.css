@@ -1,11 +1,15 @@
-.recipeListPage {
+.RecipeListPage {
   background-color: hsl(195, 100%, 82%);
   display: flex;
   flex-direction: column;
   align-items: center;
   color: hsl(218, 100%, 35%);
 }
-.Header {
-  color: hsl(218, 100%, 35%);
-  font-weight: 10vw;
+
+.RecipeListPage .RecipeSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3vh;
+  margin-bottom: 3vh;
 }
