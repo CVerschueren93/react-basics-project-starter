@@ -25,7 +25,7 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
       return (
         <>
           <div className="Diet">
-            <p>Diet</p>
+            <p className="DietHeader">Diet</p>
             <ul className="DietLabels">{labelList}</ul>
           </div>
         </>
@@ -41,7 +41,7 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
     return (
       <>
         <div className="HealtLabels">
-          <p>Health labels</p>
+          <p className="HealthLabelsHeader">Health labels</p>
           <ul className="HealthLabelList">{healthLabelList}</ul>
         </div>
       </>
@@ -57,7 +57,7 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
       return (
         <>
           <div className="Cautions">
-            <p>Cautions</p>
+            <p className="CautionsHeader">Cautions</p>
             <ul className="CautionList">{cautionList}</ul>
           </div>
         </>
@@ -76,7 +76,7 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
     return (
       <>
         <div className="TotalNutrients">
-          <p>Total nutrients</p>
+          <p className="TotalNutrientsHeader">Total nutrients</p>
           <ul className="NutrientList">
             <li>{calories} calories</li>
             <li>{protein} g protein</li>
@@ -93,7 +93,7 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
   return (
     <>
       <div className="SingleRecipePage">
-        <div className="ExitRecipe">
+        <div className="Recipe">
           <button
             className="BackButton"
             type="button"
@@ -104,11 +104,11 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
         </div>
         <img src={info.image} className="SingleRecipeImage"></img>
         <div className="SingleRecipeInfoLeft">
-          <p>Meal type: {info.mealType}</p>
+          <p className="MealType">Meal type: {info.mealType}</p>
           <h2>{info.label}</h2>
           <p>Total cooking time: {info.totalTime} minutes</p>
           <p>Servings: {info.yield}</p>
-          <p>Dish type: {info.dishType}</p>
+          <p className="DishType">Dish type: {info.dishType}</p>
           {ingredients()}
         </div>
         <div className="SingleRecipeInfoRight">
@@ -121,54 +121,3 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
     </>
   );
 };
-
-/// <Center bgColor="blue.200" h="100vh" flexDirection="column">
-//<Card
-//borderStyle={"solid"}
-//borderWidth={3}
-//borderRadius="xl"
-//w="3xl"
-//h="3xl"
-//>
-//<CardBody>
-//<Image
-//h="md"
-//w="100%"
-//src={item.recipe.image}
-//borderRadius="md"
-//borderStyle={"solid"}
-//borderWidth={2}
-//borderColor={"black"}
-///>
-//<Stack mt="6" spacing="3">
-//<Heading size="md">{item.recipe.label}</Heading>
-
-//<Flex gap={2}>
-//<Text color="blue.600">
-//{item.recipe.mealType}
-//{item.recipe.dishType}
-//{item.recipe.totalTime}
-//{item.recipe.dietLabels}
-//{item.recipe.healthLabels}
-//{item.recipe.cautions}
-//{item.recipe.ingredientLines}
-//{item.recipe.dishType}
-//Total nutrients:
-//<li>{calories} CALORIES</li>
-//<li>{carbs} g CARBS</li>
-//<li>{protein} g PROTEIN</li>
-//<li>{fat} g FAT</li>
-//<li>{cholesterol} mg CHOLESTEROL</li>
-//<li>{sodium} mg SODIUM</li>
-//</Text>
-//</Flex>
-
-//<Button color="blue.600" w="fit-content" onClick={() => clickFn()}>
-//Back to overview
-//</Button>
-//</Stack>
-//</CardBody>
-//</Card>
-//</Center>
-//);
-//};
