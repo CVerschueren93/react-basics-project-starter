@@ -1,0 +1,15 @@
+.SingleRecipePage {
+  width: 90%;
+}
+
+.ExitRecipe {
+  text-align: center;
+}
+
+.BackButton {
+  background-color: hsl(0, 100%, 100%);
+  font-size: 2vw;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 3vh;
+}
