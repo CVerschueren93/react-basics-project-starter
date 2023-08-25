@@ -84,3 +84,42 @@
   border-radius: 5px;
   padding: 0px 5px 0px 5px;
 }
+
+@media (max-width: 600px) {
+  .RecipeCard {
+    text-align: center;
+    width: 80vw;
+    border-width: 2px;
+    border-color: hsl(0, 2%, 0%);
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  .RecipeInfo .Meal .MealType {
+    font-size: 2vw;
+    margin-top: 1px;
+  }
+
+  .RecipeInfo .Meal .HeaderTwo {
+    font-size: 2vw;
+  }
+
+  .RecipeInfo .OtherInformation .VeganOrVegetarian {
+    font-size: 2vw;
+  }
+
+  .RecipeInfo .OtherInformation .DietLabels {
+    font-size: 2vw;
+  }
+
+  .RecipeInfo .OtherInformation .DishType {
+    font-size: 2vw;
+  }
+
+  .RecipeInfo .OtherInformation .Cautions {
+    font-size: 2vw;
+  }
+
+  .HeaderTwo {
+    font-size: 1.5vw;
+  }
+}
