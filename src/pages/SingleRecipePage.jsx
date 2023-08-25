@@ -94,7 +94,11 @@ export const SingleRecipePage = ({ selectedRecipe, clickFn }) => {
     <>
       <div className="SingleRecipePage">
         <div className="ExitRecipe">
-          <button type="button" onClick={() => clickFn()}>
+          <button
+            className="BackButton"
+            type="button"
+            onClick={() => clickFn()}
+          >
             Back to overview
           </button>
         </div>
