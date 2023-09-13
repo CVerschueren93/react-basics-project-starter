@@ -54,39 +54,3 @@ export const RecipeCard = ({ selectedRecipe, onClick }) => {
     </>
   );
 };
-// <Center>
-// <Card
-// borderRadius="xl"
-//borderStyle={"solid"}
-//borderWidth={3}
-//w="sm"
-//h="30rem"
-//onClick={() => clickFn(info)}
-//cursor="pointer"
-//_hover={{ transform: "scale(1.01)" }}
-//>
-//<CardBody>
-//<Image
-//h={64}
-//w="sm"
-//src={item.recipe.image}
-//borderRadius="md"
-//borderStyle={"solid"}
-//borderWidth={2}
-//borderColor={"black"}
-///>
-//<Stack mt="6" spacing="3">
-//<Heading size="md">{item.recipe.label}</Heading>
-//<Text color="blue.600">
-//<Flex>
-//<Tag>{dietLabels()},</Tag>
-//</Flex>
-//{cautions()},{item.recipe.mealType},{item.recipe.dishType},
-//{veganVegetarian()},
-//</Text>
-//</Stack>
-//</CardBody>
-//</Card>
-//</Center>
-//);
-//};
